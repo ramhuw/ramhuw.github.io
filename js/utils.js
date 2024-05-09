@@ -23,7 +23,7 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
-  registerExtURL() {
+  registerExtURL: function() {
     document.querySelectorAll('span.exturl').forEach(element => {
       const link = document.createElement('a');
       // https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings
@@ -39,13 +39,13 @@ NexT.utils = {
     });
   },
 
-  registerCodeblock(element) {
+  registerCodeblock: function(element) {
     const inited = !!element;
-    let figure;
-    if (CONFIG.hljswrap) {
-      figure = (inited ? element : document).querySelectorAll('figure.highlight');
-    } else {
-      figure = document.querySelectorAll('pre');
+    let figure = (inited ? element : document).querySelectorAll('figure.highlight');
+    let isHljsWithWrap = true;
+    if (figure.length === 0) {
+      figure = document.querySelectorAll('pre:not(.mermaid)');
+      isHljsWithWrap = false;
     }
     figure.forEach(element => {
       if (!inited) {
@@ -60,13 +60,11 @@ NexT.utils = {
           });
         });
       }
-      const height = parseInt(window.getComputedStyle(element).height, 10);
-      // Skip pre > .mermaid for folding but keep the copy button
-      // Note that it only works before mermaid.js loaded (race condition)
-      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height) && !element.querySelector('.mermaid');
+      const height = parseInt(window.getComputedStyle(element).height.replace('px', ''), 10);
+      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height);
       if (!needFold && !CONFIG.copycode.enable) return;
       let target;
-      if (CONFIG.hljswrap && CONFIG.copycode.style === 'mac') {
+      if (isHljsWithWrap && CONFIG.copycode.style === 'mac') {
         target = element;
       } else {
         let box = element.querySelector('.code-container');
@@ -131,7 +129,7 @@ NexT.utils = {
     });
   },
 
-  wrapTableWithBox() {
+  wrapTableWithBox: function() {
     document.querySelectorAll('table').forEach(element => {
       const box = document.createElement('div');
       box.className = 'table-container';
@@ -139,7 +137,7 @@ NexT.utils = {
     });
   },
 
-  registerVideoIframe() {
+  registerVideoIframe: function() {
     document.querySelectorAll('iframe').forEach(element => {
       const supported = [
         'www.youtube.com',
@@ -161,7 +159,7 @@ NexT.utils = {
     });
   },
 
-  updateActiveNav() {
+  updateActiveNav: function() {
     if (!Array.isArray(NexT.utils.sections)) return;
     let index = NexT.utils.sections.findIndex(element => {
       return element && element.getBoundingClientRect().top > 10;
@@ -174,7 +172,7 @@ NexT.utils = {
     this.activateNavByIndex(index);
   },
 
-  registerScrollPercent() {
+  registerScrollPercent: function() {
     const backToTop = document.querySelector('.back-to-top');
     const readingProgressBar = document.querySelector('.reading-progress-bar');
     // For init back to top in sidebar if page was scrolled after page refresh.
@@ -206,7 +204,7 @@ NexT.utils = {
   /**
    * Tabs tag listener (without twitter bootstrap).
    */
-  registerTabsTag() {
+  registerTabsTag: function() {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
     document.querySelectorAll('.tabs ul.nav-tabs .tab').forEach(element => {
       element.addEventListener('click', event => {
@@ -221,9 +219,9 @@ NexT.utils = {
         // Comment system selection tab does not contain .active class.
         const activeTab = tabContent.querySelector('.active') || tabContent.firstElementChild;
         // Hight might be `auto`.
-        const prevHeight = parseInt(window.getComputedStyle(activeTab).height, 10) || 0;
-        const paddingTop = parseInt(window.getComputedStyle(activeTab).paddingTop, 10);
-        const marginBottom = parseInt(window.getComputedStyle(activeTab.firstElementChild).marginBottom, 10);
+        const prevHeight = parseInt(window.getComputedStyle(activeTab).height.replace('px', ''), 10) || 0;
+        const paddingTop = parseInt(window.getComputedStyle(activeTab).paddingTop.replace('px', ''), 10);
+        const marginBottom = parseInt(window.getComputedStyle(activeTab.firstElementChild).marginBottom.replace('px', ''), 10);
         tabContent.style.height = prevHeight + paddingTop + marginBottom + 'px';
         // Add & Remove active class on `nav-tabs` & `tab-content`.
         [...nav.children].forEach(target => {
@@ -240,7 +238,7 @@ NexT.utils = {
         }));
         // Get the height of `tab-pane` which is activated now.
         const hasScrollBar = document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
-        const currHeight = parseInt(window.getComputedStyle(tabContent.querySelector('.active')).height, 10);
+        const currHeight = parseInt(window.getComputedStyle(tabContent.querySelector('.active')).height.replace('px', ''), 10);
         // Reset the height of `tab-content` and see the animation.
         tabContent.style.height = currHeight + paddingTop + marginBottom + 'px';
         // Change the height of `tab-content` may cause scrollbar show / disappear, which may result in the change of the `tab-pane`'s height
@@ -248,7 +246,7 @@ NexT.utils = {
           if ((document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)) !== hasScrollBar) {
             tabContent.style.transition = 'height 0.3s linear';
             // After the animation, we need reset the height of `tab-content` again.
-            const currHeightAfterScrollBarChange = parseInt(window.getComputedStyle(tabContent.querySelector('.active')).height, 10);
+            const currHeightAfterScrollBarChange = parseInt(window.getComputedStyle(tabContent.querySelector('.active')).height.replace('px', ''), 10);
             tabContent.style.height = currHeightAfterScrollBarChange + paddingTop + marginBottom + 'px';
           }
           // Remove all the inline styles, and let the height be adaptive again.
@@ -271,7 +269,7 @@ NexT.utils = {
     window.dispatchEvent(new Event('tabs:register'));
   },
 
-  registerCanIUseTag() {
+  registerCanIUseTag: function() {
     // Get responsive height passed from iframe.
     window.addEventListener('message', ({ data }) => {
       if (typeof data === 'string' && data.includes('ciu_embed')) {
@@ -282,7 +280,7 @@ NexT.utils = {
     }, false);
   },
 
-  registerActiveMenuItem() {
+  registerActiveMenuItem: function() {
     document.querySelectorAll('.menu-item a[href]').forEach(target => {
       const isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       const isSubPath = !CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
@@ -290,7 +288,7 @@ NexT.utils = {
     });
   },
 
-  registerLangSelect() {
+  registerLangSelect: function() {
     const selects = document.querySelectorAll('.lang-select');
     selects.forEach(sel => {
       sel.value = CONFIG.page.lang;
@@ -305,7 +303,7 @@ NexT.utils = {
     });
   },
 
-  registerSidebarTOC() {
+  registerSidebarTOC: function() {
     this.sections = [...document.querySelectorAll('.post-toc:not(.placeholder-toc) li a.nav-link')].map(element => {
       const target = document.getElementById(decodeURI(element.getAttribute('href')).replace('#', ''));
       // TOC item animation navigate.
@@ -327,7 +325,7 @@ NexT.utils = {
     this.updateActiveNav();
   },
 
-  registerPostReward() {
+  registerPostReward: function() {
     const button = document.querySelector('.reward-container button');
     if (!button) return;
     button.addEventListener('click', () => {
@@ -335,7 +333,7 @@ NexT.utils = {
     });
   },
 
-  activateNavByIndex(index) {
+  activateNavByIndex: function(index) {
     const nav = document.querySelector('.post-toc:not(.placeholder-toc) .nav');
     if (!nav) return;
 
@@ -376,7 +374,7 @@ NexT.utils = {
     });
   },
 
-  updateSidebarPosition() {
+  updateSidebarPosition: function() {
     if (window.innerWidth < 1200 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     const hasTOC = document.querySelector('.post-toc:not(.placeholder-toc)');
@@ -390,7 +388,7 @@ NexT.utils = {
     }
   },
 
-  activateSidebarPanel(index) {
+  activateSidebarPanel: function(index) {
     const sidebar = document.querySelector('.sidebar-inner');
     const activeClassNames = ['sidebar-toc-active', 'sidebar-overview-active'];
     if (sidebar.classList.contains(activeClassNames[index])) return;
@@ -417,7 +415,7 @@ NexT.utils = {
     sidebar.classList.replace(activeClassNames[1 - index], activeClassNames[index]);
   },
 
-  updateFooterPosition() {
+  updateFooterPosition: function() {
     if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     function updateFooterPosition() {
       const footer = document.querySelector('.footer');
@@ -430,7 +428,7 @@ NexT.utils = {
     window.addEventListener('scroll', updateFooterPosition, { passive: true });
   },
 
-  getScript(src, options = {}, legacyCondition) {
+  getScript: function(src, options = {}, legacyCondition) {
     if (typeof options === 'function') {
       return this.getScript(src, {
         condition: legacyCondition
@@ -481,7 +479,7 @@ NexT.utils = {
     });
   },
 
-  loadComments(selector, legacyCallback) {
+  loadComments: function(selector, legacyCallback) {
     if (legacyCallback) {
       return this.loadComments(selector).then(legacyCallback);
     }
@@ -500,14 +498,5 @@ NexT.utils = {
       });
       intersectionObserver.observe(element);
     });
-  },
-
-  debounce(func, wait) {
-    let timeout;
-    return function(...args) {
-      const context = this;
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(context, args), wait);
-    };
   }
 };

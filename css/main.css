@@ -1231,7 +1231,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffcc7f;
+  background: #ff0dfa;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2354,12 +2354,6 @@ ul.breadcrumb li:last-child {
 .tag-cloud-10 {
   border-bottom-color: #111;
   color: #111;
-}
-mark.search-keyword {
-  background: transparent;
-  border-bottom: 1px dashed #ff2a2a;
-  color: #ff2a2a;
-  font-weight: bold;
 }
 .use-motion .animated {
   animation-fill-mode: none;
