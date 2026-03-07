@@ -2,6 +2,7 @@
 Add here global page variables to use throughout your website.
 -->
 +++
+title = "Hechi's Blog"
 author = "Hechi Zhang"
 mintoclevel = 2
 
