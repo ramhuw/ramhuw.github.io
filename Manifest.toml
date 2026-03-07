@@ -2,7 +2,12 @@
 
 julia_version = "1.12.5"
 manifest_format = "2.0"
-project_hash = "9a2bce32843f4e3f7471a5c7b7d89536ee741f6e"
+project_hash = "9f922738d7a5ad0412ffaadde18e017b6460f97c"
+
+[[deps.AbstractTrees]]
+git-tree-sha1 = "2d9c9a55f9c93e8887ad391fbae72f8ef55e1177"
+uuid = "1520ce14-60c1-5f80-bbc7-55ef81b5835c"
+version = "0.4.5"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -20,6 +25,11 @@ version = "1.11.0"
 git-tree-sha1 = "0691e34b3bb8be9307330f88d1a3c3f25466c24d"
 uuid = "d1d4a3ce-64b1-5f1a-9ba4-7e7e69966f35"
 version = "0.1.9"
+
+[[deps.CEnum]]
+git-tree-sha1 = "389ad5c84de1ae7cf0e28e381131c98ea87d54fc"
+uuid = "fa961155-64e5-5f13-b03f-caf6b980ea82"
+version = "0.5.0"
 
 [[deps.CodecZlib]]
 deps = ["TranscodingStreams", "Zlib_jll"]
@@ -91,6 +101,12 @@ deps = ["Base64", "CodecZlib", "ConcurrentUtilities", "Dates", "ExceptionUnwrapp
 git-tree-sha1 = "5e6fe50ae7f23d171f44e311c2960294aaa0beb5"
 uuid = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 version = "1.10.19"
+
+[[deps.Highlights]]
+deps = ["Artifacts", "JSON", "Pkg", "TreeSitter"]
+git-tree-sha1 = "16ad8504d3c7d6e694a12580306257bfded9ce7b"
+uuid = "eafb193a-b7ab-5a9e-9068-77385905fa72"
+version = "0.6.0"
 
 [[deps.IOCapture]]
 deps = ["Logging", "Random"]
@@ -330,6 +346,12 @@ git-tree-sha1 = "0c45878dcfdcfa8480052b6ab162cdd138781742"
 uuid = "3bb67fe8-82b1-5028-8e26-92a6c54297fa"
 version = "0.11.3"
 
+[[deps.TreeSitter]]
+deps = ["AbstractTrees", "CEnum", "JSON", "Libdl", "tree_sitter_jll"]
+git-tree-sha1 = "90930c3c438e1a60f9eb38e5a640e60c3238f5ce"
+uuid = "f42328cb-ece0-4cf2-995f-9e7abb27d006"
+version = "0.2.3"
+
 [[deps.URIs]]
 git-tree-sha1 = "bef26fb046d031353ef97a82e3fdb6afe7f21b1a"
 uuid = "5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4"
@@ -358,3 +380,9 @@ version = "1.64.0+1"
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
 uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 version = "17.7.0+0"
+
+[[deps.tree_sitter_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl"]
+git-tree-sha1 = "cd8c31cbd887c3260b79acfeb0dce1298deca1c9"
+uuid = "695101d5-1b81-5434-9529-70430e482717"
+version = "0.25.10+0"
