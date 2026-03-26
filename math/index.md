@@ -1,4 +1,3 @@
 @def title = "Math"
 
-## Math Essays
-
+# Math Essays
