@@ -75,3 +75,7 @@ nav ul li a:hover {
 body {
     font-family: 'EB Garamond', 'Noto Serif TC', serif;
 }
+
+figcaption {
+    text-align: center;
+}

@@ -20,5 +20,7 @@ From 2022 to 2024, I studied at Leiden University (Universiteit Leiden) and earn
 
 From 2017 to 2021, I studied at Beijing University of Chemical Technology (北京化工大學) and earned my bachelar of science degree.
 
-\figcap{/assets/images/_HC_5199.jpg}{The apartment where I grew up, Leshan, China 2016}
+\figcap{/assets/images/_HC_1689.JPG}{A Photo of Myself, Leshan, China, 2014}
+
+\figcap{/assets/images/_HC_5199.JPG}{The Apartment Where I Grew Up, Leshan, China 2016}
 
