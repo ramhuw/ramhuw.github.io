@@ -1,3 +1,3 @@
 @def title = "CS"
 
-# CS Essays
+# Computer Science Essays

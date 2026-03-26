@@ -13,11 +13,11 @@ Write notes in Typst instead of $\LaTeX$
 
 ## About
 
-My name is [Hechi Zhang](https://math.indiana.edu/about/graduate-students/zhang-hechi.html) (張 和持), born in 1998 in Leshan (樂山), China and currently a graduate student in the Department of Mathematics at Indiana University Bloomington since 2024, under [Prof. Matthias Strauch](https://math.indiana.edu/about/faculty/strauch-matthias.html). I have a dream to pursue further in number theory and physics, and this site serves as my blog.
+My name is [Hechi Zhang](https://math.indiana.edu/about/graduate-students/zhang-hechi.html) (張 和持), born in Jul 1998 in Leshan (樂山), China and currently a graduate student in the Department of Mathematics at Indiana University Bloomington since Aug 2024, under [Prof. Matthias Strauch](https://math.indiana.edu/about/faculty/strauch-matthias.html). This site serves as my blog.
 
-From 2022 to 2024, I studied at Leiden University (Universiteit Leiden) and earned my master of science degree under [Eugenia Rosu](https://sites.google.com/view/eugeniarosu/home), with thesis [Hilbert Modular Surfaces and Hirzebruch-Zagier Cycles](https://studenttheses.universiteitleiden.nl/handle/1887/4104713).
+From Feb 2022 to Jul 2024, I studied at Leiden University (Universiteit Leiden) and earned my master of science degree under [Dr. Eugenia Rosu](https://sites.google.com/view/eugeniarosu/home), with thesis [Hilbert Modular Surfaces and Hirzebruch-Zagier Cycles](https://studenttheses.universiteitleiden.nl/handle/1887/4104713).
 
-From 2017 to 2021, I studied at Beijing University of Chemical Technology (北京化工大學) and earned my bachelar of science degree.
+From Sep 2017 to Jun 2021, I studied at Beijing University of Chemical Technology (北京化工大學) and earned my bachelar of science degree.
 
 
 
@@ -33,5 +33,5 @@ From 2017 to 2021, I studied at Beijing University of Chemical Technology (北�
 
 \figcap{/assets/images/ZHC_6208.JPG}{On the other side of the mountain is the Qinghai Lake, 2017}
 
-This calls an end to my adolescence. For my adulthood updates check out my math material and more!
+This calls an end to my adolescence. For adulthood updates check out the math material and more!
 
