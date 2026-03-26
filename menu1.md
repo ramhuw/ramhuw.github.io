@@ -1,5 +1,5 @@
 +++
-title = "Essays"
+title = "Math"
 hascode = true
 hasmath = true
 date = Date(2019, 3, 22)
