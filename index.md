@@ -20,7 +20,9 @@ From 2022 to 2024, I studied at Leiden University (Universiteit Leiden) and earn
 
 From 2017 to 2021, I studied at Beijing University of Chemical Technology (北京化工大學) and earned my bachelar of science degree.
 
-\figcap{/assets/images/HC_1689.JPG}{A Photo of Myself, Leshan, 2014}
+\figcap{/assets/images/ZHC_1689.JPG}{A Photo of myself, Leshan, 2014}
 
-\figcap{/assets/images/HC_5199.JPG}{The Apartment Where I Grew Up, Leshan, 2016}
+\figcap{/assets/images/IMG_0378.JPG}{Me in front of Mt. Everest, 2014}
+
+\figcap{/assets/images/ZHC_5199.JPG}{The apartment where I grew up, Leshan, 2016}
 
