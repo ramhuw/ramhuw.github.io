@@ -30,3 +30,12 @@ Add here global latex commands to use throughout your pages.
 -->
 \newcommand{\R}{\mathbb R}
 \newcommand{\scal}[1]{\langle #1 \rangle}
+
+\newcommand{\figcap}[2]{
+~~~
+<figure>
+  <img src="!#1" alt="figure">
+  <figcaption>!#2</figcaption>
+</figure>
+~~~
+}
