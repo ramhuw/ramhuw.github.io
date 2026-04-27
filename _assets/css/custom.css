@@ -1,16 +1,13 @@
 /* Body text — elegant and readable */
 body {
-    font-family: 'EB Garamond', serif;
+    font-family: 'EB Garamond', 'Noto Serif TC', serif;
     font-size: 18px;
     line-height: 1.8;
     color: #2c2c2c;
 }
 
 /* Headings — grand and academic */
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     color: #1a1a1a;
@@ -18,8 +15,7 @@ h4 {
 }
 
 /* Code blocks — clean monospace */
-code,
-pre {
+code, pre {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.65em;
     background: #f5f5f5;
@@ -42,7 +38,7 @@ nav ul {
     margin: 0;
 }
 
-/* Nav links — correct selector */
+/* Nav links */
 nav ul li a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -53,11 +49,11 @@ nav ul li a {
     transition: color 0.2s ease;
 }
 
-/* Hover */
 nav ul li a:hover {
     color: #222;
 }
 
+/* Blog name */
 .blog-name a {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8em;
@@ -72,10 +68,16 @@ nav ul li a:hover {
     transition: color 0.2s ease;
 }
 
-body {
-    font-family: 'EB Garamond', 'Noto Serif TC', serif;
-}
-
+/* Captions */
 figcaption {
     text-align: center;
+}
+
+/* Further reading */
+.further-reading {
+    border: 0.5px dashed #ccc;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 2em 0;
+    background: none;
 }
