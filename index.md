@@ -1,19 +1,21 @@
 # Home 
 ## News
 
-**Fight depression!** Sertraline 50 mg/day.
+**Fight depression!** Mirtazapine 7.5 mg/day.
 
 Study $p$-adic analysis and formalize with Lean.
 
 Scientific computing with Julia.
 
-System and game development with Rust.
+System development with Rust.
 
-Write notes in Typst instead of $\LaTeX$
+Write notes in Typst instead of $\LaTeX$.
+
+Update this blog!
 
 ## About
 
-My name is [Hechi Zhang](https://math.indiana.edu/about/graduate-students/zhang-hechi.html) (張 和持), born in Jul 1998 in Leshan (樂山), China and currently a graduate student in the Department of Mathematics at Indiana University Bloomington since Aug 2024, under [Prof. Matthias Strauch](https://math.indiana.edu/about/faculty/strauch-matthias.html). This site serves as my blog.
+My name is [Hechi Zhang](https://math.indiana.edu/about/graduate-students/zhang-hechi.html) (張 和持), born in Jul 1998 in Leshan (樂山), China and currently a graduate student in the Department of Mathematics at Indiana University Bloomington since Aug 2024, under [Prof. Matthias Strauch](https://math.indiana.edu/about/faculty/strauch-matthias.html). This site serves as my blog. Feel free to reach out at [heczhang@iu.edu](mailto:heczhang@iu.edu) for any questions.
 
 From Feb 2022 to Jul 2024, I studied at Leiden University (Universiteit Leiden) and earned my master of science degree under [Dr. Eugenia Rosu](https://sites.google.com/view/eugeniarosu/home), with thesis [Hilbert Modular Surfaces and Hirzebruch-Zagier Cycles](https://studenttheses.universiteitleiden.nl/handle/1887/4104713).
 
