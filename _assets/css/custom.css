@@ -1,4 +1,4 @@
-/* Body text — elegant and readable */
+/* Base typography */
 body {
     font-family: 'EB Garamond', 'Noto Serif TC', serif;
     font-size: 18px;
@@ -6,7 +6,6 @@ body {
     color: #2c2c2c;
 }
 
-/* Headings — grand and academic */
 h1,
 h2,
 h3,
@@ -17,7 +16,6 @@ h4 {
     line-height: 1.3;
 }
 
-/* Code blocks — clean monospace */
 code,
 pre {
     font-family: 'JetBrains Mono', monospace;
@@ -27,25 +25,43 @@ pre {
     padding: 2px 6px;
 }
 
-/* Math */
 .math {
     font-size: 1.1em;
 }
 
-/* Nav list */
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 2em;
-    padding: 0;
-    margin: 0;
+figcaption {
+    text-align: center;
 }
 
-/* Nav links */
+.further-reading {
+    border: 0.5px dashed #ccc;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 2em 0;
+    background: none;
+}
+
+/* Blog name — large, separated from nav */
+.blog-name a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #2c2c2c;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+    margin-right: 2em;
+}
+
+.blog-name a:hover {
+    color: #888;
+}
+
+/* Nav links — smaller, uppercase, lighter */
 nav ul li a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    font-size: 0.85em;
     color: #555;
     text-decoration: none;
     letter-spacing: 0.15em;
@@ -57,79 +73,26 @@ nav ul li a:hover {
     color: #222;
 }
 
-/* Blog name */
-.blog-name a {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8em;
-    font-weight: 600;
-    color: #2c2c2c;
-    text-decoration: none;
-    letter-spacing: 0.05em;
+/* Vertical separator between title and nav */
+nav {
+    border-left: 1px solid #ddd;
+    padding-left: 2em;
 }
 
-.blog-name a:hover {
-    color: #888;
-    transition: color 0.2s ease;
-}
-
-/* Captions */
-figcaption {
-    text-align: center;
-}
-
-/* Further reading */
-.further-reading {
-    border: 0.5px dashed #ccc;
-    border-radius: 6px;
-    padding: 1rem 1.25rem;
-    margin: 2em 0;
-    background: none;
-}
-
-/* ============================================ */
-/* Hamburger menu icon — desktop hidden */
-/* ============================================ */
-header nav #menu-icon {
-    display: none;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-}
-
-/* ============================================ */
-/* Mobile layout */
-/* ============================================ */
 @media (max-width: 768px) {
-    header nav #menu-icon {
-        display: block !important;
+    nav {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
     }
 
-    header nav {
-        position: relative;
+    .blog-name a {
+        margin-right: 0.5em;
     }
 
-    /* hide the menu list by default on mobile, even if it's flex elsewhere */
-    header nav ul {
-        display: none !important;
-    }
-
-    /* show only when .open is added */
-    header nav ul.open {
-        display: flex !important;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1em;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        margin: 0.5em 0 0 0;
-        padding: 1em 1.5em;
-        background: white;
-        border: 1px solid #e0e0e0;
-        border-radius: 6px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        z-index: 100;
-        min-width: 160px;
-        list-style: none;
+    nav ul.open {
+        right: auto;
+        left: auto;
+        transform: translateX(-75%);
     }
 }

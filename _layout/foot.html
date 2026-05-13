@@ -5,9 +5,6 @@
 {{ if hascode }}
 {{ insert foot_highlight.html }}
 {{ end }}
-</body>
-
-</html>
 
 <script>
     document.querySelectorAll('a').forEach(link => {
@@ -27,7 +24,6 @@
                 e.stopPropagation();
                 menu.classList.toggle('open');
             });
-            // tap outside to close
             document.addEventListener('click', (e) => {
                 if (!menu.contains(e.target) && e.target !== icon) {
                     menu.classList.remove('open');
@@ -36,3 +32,7 @@
         }
     });
 </script>
+
+</body>
+
+</html>
