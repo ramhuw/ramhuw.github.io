@@ -198,7 +198,7 @@ which gives a different expression
 $$
 \zeta(s) = \frac{\tilde D(s)}{1 - 3^{1-s}}.
 $$
-Now the possible poles are of the form $s = 1 + \frac{2\pi \ii}{\log 3}m, m \in \Z$. Now that $\gcd(2, 3) = 1$, the quotient $\frac{\log 3}{\log 2} = \log_2 3$ cannot be a rational number, so $s = 1$ is the only pole.
+Now the possible poles are of the form $s = 1 + \frac{2\pi \ii}{\log 3}m, m \in \Z$. Now that $\gcd(2, 3) = 1$, the quotient $\frac{\log 3}{\log 2} = \log_2 3$ cannot be a rational number, so $s = 1$ is the only pole. We may plot the $\zeta$ function as follows, the color reflects argument, and brightness reflects absolute value.
 
 ```julia:./code/zeta_domain_coloring
 using CairoMakie, SpecialFunctions, Colors
