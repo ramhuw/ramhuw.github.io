@@ -17,3 +17,22 @@
         }
     });
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const icon = document.getElementById('menu-icon');
+        const menu = document.querySelector('nav ul');
+        if (icon && menu) {
+            icon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.classList.toggle('open');
+            });
+            // tap outside to close
+            document.addEventListener('click', (e) => {
+                if (!menu.contains(e.target) && e.target !== icon) {
+                    menu.classList.remove('open');
+                }
+            });
+        }
+    });
+</script>
