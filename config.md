@@ -29,7 +29,11 @@ website_url   = "https://ramhuw.github.io/"
 Add here global latex commands to use throughout your pages.
 -->
 \newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
 \newcommand{\scal}[1]{\langle #1 \rangle}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\ii}{\mathrm i}
 
 \newcommand{\figcap}[2]{
 ~~~

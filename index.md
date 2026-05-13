@@ -15,14 +15,7 @@ Update this blog!
 
 ## About
 
-My name is [Hechi Zhang](https://math.indiana.edu/about/graduate-students/zhang-hechi.html) (張 和持), born in Jul 1998 in Leshan (樂山), China and currently a graduate student in the Department of Mathematics at Indiana University Bloomington since Aug 2024, under [Prof. Matthias Strauch](https://math.indiana.edu/about/faculty/strauch-matthias.html). This site serves as my blog. Feel free to reach out at [heczhang@iu.edu](mailto:heczhang@iu.edu) for any questions.
-
-From Feb 2022 to Jul 2024, I studied at Leiden University (Universiteit Leiden) and earned my master of science degree under [Dr. Eugenia Rosu](https://sites.google.com/view/eugeniarosu/home), with thesis [Hilbert Modular Surfaces and Hirzebruch-Zagier Cycles](https://studenttheses.universiteitleiden.nl/handle/1887/4104713).
-
-From Sep 2017 to Jun 2021, I studied at Beijing University of Chemical Technology (北京化工大學) and earned my bachelar of science degree.
-
-
-
+My name is [Hechi Zhang](https://heczhang.pages.iu.edu) (張 和持), a math grad student from IUB and this site serves as my blog. Feel free to reach out at [heczhang@iu.edu](mailto:heczhang@iu.edu) for any questions. Here are some old photos of mine.
 \figcap{/assets/images/ZHC_1689.JPG}{A Photo of myself, Leshan, 2014}
 
 \figcap{/assets/images/IMG_0378.JPG}{Me in front of Mt. Everest, 2014}

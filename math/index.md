@@ -1,6 +1,7 @@
 @def title = "Math"
 
 # Mathematics Essays
-+ [Class Field Theory](/math/class-field-theory/)
 
-+ [Representation Theory](/math/representation-theory/)
+## [Analytic Number Theory](/math/analytic_number_theory/)
+
++ [Dirichlet Series](/math/analytic_number_theory/dirichlet_series/)
