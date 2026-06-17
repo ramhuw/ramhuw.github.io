@@ -1,6 +1,6 @@
 # This file was generated, do not modify it. # hide
 using CairoMakie
-
+#hideall
 N = 100
 ns = 1:N
 

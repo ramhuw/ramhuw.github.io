@@ -1,1 +1,0 @@
-CairoMakie.Screen{SVG}

@@ -1,4 +1,6 @@
 # This file was generated, do not modify it. # hide
+#hideall
+zeta_domain_coloring
 using CairoMakie, SpecialFunctions, Colors
 
 # the domain
