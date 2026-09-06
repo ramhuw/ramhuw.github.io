@@ -15,7 +15,9 @@ $$
 $$
 and let us also define this as a function in Julia with `Primes.jl` and plot the first values with `CairoMakie.jl`
 
-```julia:./code/divisor_count
+```julia:./code/
+#hideall
+divisor_count
 using Primes
 using CairoMakie
 
@@ -62,7 +64,7 @@ as plotted
 
 ```julia:./code/asymtote
 using CairoMakie
-
+#hideall
 N = 100
 ns = 1:N
 
@@ -198,9 +200,11 @@ which gives a different expression
 $$
 \zeta(s) = \frac{\tilde D(s)}{1 - 3^{1-s}}.
 $$
-Now the possible poles are of the form $s = 1 + \frac{2\pi \ii}{\log 3}m, m \in \Z$. Now that $\gcd(2, 3) = 1$, the quotient $\frac{\log 3}{\log 2} = \log_2 3$ cannot be a rational number, so $s = 1$ is the only pole. We may plot the $\zeta$ function as follows:
+Now the possible poles are of the form $s = 1 + \frac{2\pi \ii}{\log 3}m, m \in \Z$. Now that $\gcd(2, 3) = 1$, the quotient $\frac{\log 3}{\log 2} = \log_2 3$ cannot be a rational number, so $s = 1$ is the only pole. We may plot the $\zeta$ function as follows, the color reflects argument, and brightness reflects absolute value. As we can see, the brightest point is the pole.
 
-```julia:./code/zeta_domain_coloring
+```julia:./code/
+#hideall
+zeta_domain_coloring
 using CairoMakie, SpecialFunctions, Colors
 
 # the domain
@@ -239,9 +243,7 @@ save(joinpath(@OUTPUT, "zeta_domain_coloring.png"), fig)
 
 \fig{zeta_domain_coloring}
 
-Here color reflects argument, and brightness reflects absolute value. Brightness peaks at the center ($s = 0$).
-
-Now we have the (partly) the meromorphic continuation, how are we going to shift the contour? 
+Consider the following contour, which we will shift.
 
 ```julia:./code/shift
 using CairoMakie
