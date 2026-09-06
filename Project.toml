@@ -2,6 +2,7 @@
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 Colors = "5ae59095-9a9b-59fe-a467-6f913c188581"
 Franklin = "713c75ef-9fc9-4b05-94a9-213340da978e"
+GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
 Highlights = "eafb193a-b7ab-5a9e-9068-77385905fa72"
 NodeJS = "2bd173c7-0d6d-553b-b6af-13a54713934c"
 Primes = "27ebfcd6-29c5-5fa9-bf4b-fb8fc14df3ae"

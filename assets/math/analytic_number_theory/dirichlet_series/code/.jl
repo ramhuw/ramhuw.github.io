@@ -21,12 +21,15 @@ end
 
 img = domain_color.(Z)
 
-fig = Figure(size=(400, 400))
+fig = Figure()
 ax = Axis(fig[1, 1],
     xlabel = L"\sigma",
     ylabel = L"t",
     title  = L"\zeta(\sigma + it)",
-    aspect = DataAspect()
+    aspect = DataAspect(),
+    xlabelsize = 20,
+    ylabelsize = 20,
+    titlesize = 24
 )
 
 image!(ax, (0, 2), (-1, 1), img; interpolate=false)
