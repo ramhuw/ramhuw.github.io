@@ -1,5 +1,7 @@
-@def title = "Dirichlet Series"
-@def tags = ["number theory", "analytic number theory"]
++++
+title = "Dirichlet Series"
+tags = ["number theory", "analytic number theory"]
++++
 
 [↑ Analytic Number Theory](/math/analytic_number_theory/)
 
@@ -105,8 +107,6 @@ The correct way to study $\sum_{n \leq x}d(n)$ is through its Dirichlet series $
 
 ## Arithmetic Functions and Dirichlet Series
 
-
-
 Let us extract the obvious information from the definition $d(n) = \sum_{d \mid n} 1$: it is a function defined on $\mathbb Z_+$, and the sum is over divisors. This abstracts into the following definition.
 
 *Definition.* The commutative ring of **arithmetic functions** is the set of functions
@@ -172,7 +172,7 @@ where $c$ is any real number larger than $\_sigma_a$. The left-hand side is ofte
 
 ## Contour Shifting
 
-The Perron formula is exact, but it gives no information unless we can find the dominant terms. The idea is to shift the integral contour left to get a smaller integral, while the singularities crossed should contribute to the dominant terms. 
+The Perron formula is exact, but it gives no information unless we can find the dominant terms. The idea is to shift the integral contour left to get a smaller integral, while the singularities crossed should contribute to the dominant terms.
 
 Take $a = \mathbf{1}$ for example, in this case $A(x) = \lfloor x \rfloor \sim x$ is obvious, so we expect to obtain the same result from Dirichlet series $L(s, \mathbf{1}) = \zeta(s)$. The series
 $$
