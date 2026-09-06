@@ -225,12 +225,15 @@ end
 
 img = domain_color.(Z)
 
-fig = Figure(size=(400, 400))
+fig = Figure()
 ax = Axis(fig[1, 1],
     xlabel = L"\sigma",
     ylabel = L"t",
     title  = L"\zeta(\sigma + it)",
-    aspect = DataAspect()
+    aspect = DataAspect(),
+    xlabelsize = 20,
+    ylabelsize = 20,
+    titlesize = 24
 )
 
 image!(ax, (0, 2), (-1, 1), img; interpolate=false)
@@ -240,7 +243,24 @@ save(joinpath(@OUTPUT, "zeta_domain_coloring.png"), fig)
 
 \fig{zeta_domain_coloring}
 
-Consider the following contour, which
+Consider the following contour, which we will shift.
+
+```julia:./code/shift
+using CairoMakie
+
+fig = Figure()
+ax = Axis(fig[1, 1],
+    title = "Contour Shifting",
+    xlabel = L"\sigma",
+    xlabelsize = 20,
+    ylabel = L"t",
+    ylabelsize = 20,
+    titlesize = 24)
+save(joinpath(@OUTPUT, "shift.svg"), fig)
+```
+
+\fig{shift}
+
 
 ## References
 
