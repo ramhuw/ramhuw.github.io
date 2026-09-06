@@ -198,7 +198,7 @@ which gives a different expression
 $$
 \zeta(s) = \frac{\tilde D(s)}{1 - 3^{1-s}}.
 $$
-Now the possible poles are of the form $s = 1 + \frac{2\pi \ii}{\log 3}m, m \in \Z$. Now that $\gcd(2, 3) = 1$, the quotient $\frac{\log 3}{\log 2} = \log_2 3$ cannot be a rational number, so $s = 1$ is the only pole. We may plot the $\zeta$ function as follows, the color reflects argument, and brightness reflects absolute value.
+Now the possible poles are of the form $s = 1 + \frac{2\pi \ii}{\log 3}m, m \in \Z$. Now that $\gcd(2, 3) = 1$, the quotient $\frac{\log 3}{\log 2} = \log_2 3$ cannot be a rational number, so $s = 1$ is the only pole. We may plot the $\zeta$ function as follows:
 
 ```julia:./code/zeta_domain_coloring
 using CairoMakie, SpecialFunctions, Colors
@@ -221,12 +221,15 @@ end
 
 img = domain_color.(Z)
 
-fig = Figure(size=(400, 400))
+fig = Figure()
 ax = Axis(fig[1, 1],
     xlabel = L"\sigma",
     ylabel = L"t",
     title  = L"\zeta(\sigma + it)",
-    aspect = DataAspect()
+    aspect = DataAspect(),
+    xlabelsize = 20,
+    ylabelsize = 20,
+    titlesize = 24
 )
 
 image!(ax, (0, 2), (-1, 1), img; interpolate=false)
@@ -235,6 +238,26 @@ save(joinpath(@OUTPUT, "zeta_domain_coloring.png"), fig)
 ```
 
 \fig{zeta_domain_coloring}
+
+Here color reflects argument, and brightness reflects absolute value. Brightness peaks at the center ($s = 0$).
+
+Now we have the (partly) the meromorphic continuation, how are we going to shift the contour? 
+
+```julia:./code/shift
+using CairoMakie
+
+fig = Figure()
+ax = Axis(fig[1, 1],
+    title = "Contour Shifting",
+    xlabel = L"\sigma",
+    xlabelsize = 20,
+    ylabel = L"t",
+    ylabelsize = 20,
+    titlesize = 24)
+save(joinpath(@OUTPUT, "shift.svg"), fig)
+```
+
+\fig{shift}
 
 
 ## References
