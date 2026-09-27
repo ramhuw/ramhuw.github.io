@@ -1,6 +1,6 @@
 # This file was generated, do not modify it. # hide
+#hideall
 using CairoMakie
-
 fig = Figure()
 ax = Axis(fig[1, 1],
     title = "Contour Shifting",

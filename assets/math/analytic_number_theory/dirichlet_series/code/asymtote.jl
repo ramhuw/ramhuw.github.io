@@ -1,5 +1,6 @@
 # This file was generated, do not modify it. # hide
 using CairoMakie
+using Base.MathConstants: eulergamma
 #hideall
 N = 100
 ns = 1:N
@@ -9,20 +10,20 @@ function sumd(x)
 end
 
 function xlog(x)
-    x * log(x)
+    x * log(x) + (2 * eulergamma - 1) * x
 end
 
 fig = Figure()
 ax = Axis(fig[1, 1],
     xlabel = L"x",
-    ylabel = L"\sum_{n \leq x} d(n)",
+    ylabel = L"y",
     xlabelsize = 20,
     ylabelsize = 20,
     title = "Asymtote",
     titlesize = 24)
 
 stem!(ax, ns, sumd.(ns); label=L"$\sum_{n \leq x}d(n)$")
-lines!(ax, ns, xlog.(ns); color=:red, label=L"$x \log x$")
+lines!(ax, ns, xlog.(ns); color=:red, label=L"$x \log x + (2 \gamma - 1) x$")
 
 axislegend(ax;
     position = :lt,
