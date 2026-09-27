@@ -1,17 +1,20 @@
-# Home 
-## News
+# Home
 
-**Fight depression!** Mirtazapine 7.5 mg/day.
+## Plans
 
-Study $p$-adic analysis and formalize with Lean.
++ **Fight depression!** [Mirtazapine](https://en.wikipedia.org/wiki/Mirtazapine) 7.5 mg/day.
 
-Scientific computing with Julia.
++ Study math and formalize with [Lean](https://lean-lang.org/).
 
-System development with Rust.
++ Study physics and compute with [Julia](https://julialang.org/).
 
-Write notes in Typst instead of $\LaTeX$.
++ Study computer science with [Rust](https://rust-lang.org/), [Ocaml](https://ocaml.org/), [Haskell](https://www.haskell.org/) and [Kotlin](https://kotlinlang.org/).
 
-Update this blog!
++ Write notes in [Typst](https://typst.app/).
+
++ Collect examples, ideas and resources in [Obsidian](https://obsidian.md/).
+
++ Write explanatory articles and update this [blog](https://ramhuw.github.io/). This blog is powered by the Julia package [`Franklin.jl`](https://franklinjl.org/).
 
 ## About
 
@@ -29,4 +32,3 @@ My name is [Hechi Zhang](https://heczhang.pages.iu.edu) (張 和持), a math gra
 \figcap{/assets/images/ZHC_6208.JPG}{On the other side of the mountain is the Qinghai Lake, 2017}
 
 This calls an end to my adolescence. For adulthood updates check out the math material and more!
-

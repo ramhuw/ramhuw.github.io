@@ -1,4 +1,5 @@
 using CairoMakie
+
 fig = Figure()
 ax = Axis(fig[1, 1],
     title="Contour Shifting",
