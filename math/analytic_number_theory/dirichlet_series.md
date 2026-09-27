@@ -17,9 +17,9 @@ $$
 $$
 and let us also define this as a function in Julia with `Primes.jl` and plot the first values with `CairoMakie.jl`
 
-```julia:./code/
+```julia:./code/divisor_count
 #hideall
-divisor_count
+
 using Primes
 using CairoMakie
 
@@ -59,13 +59,14 @@ save(joinpath(@OUTPUT, "divisor_count.svg"), fig)
 Seems quite random, however in this article we will discuss the following striking asymptoticity obtained by Dirichlet in 1849
 
 $$
-    \sum_{n \leq x} d(n) \sim x \log x, \quad x \to +\infty
+    \sum_{n \leq x} d(n) \sim x \log x + (2\gamma - 1) x, \quad x \to +\infty
 $$
 
 as plotted
 
 ```julia:./code/asymtote
 using CairoMakie
+using Base.MathConstants: eulergamma
 #hideall
 N = 100
 ns = 1:N
@@ -75,20 +76,20 @@ function sumd(x)
 end
 
 function xlog(x)
-    x * log(x)
+    x * log(x) + (2 * eulergamma - 1) * x
 end
 
 fig = Figure()
 ax = Axis(fig[1, 1],
     xlabel = L"x",
-    ylabel = L"\sum_{n \leq x} d(n)",
+    ylabel = L"y",
     xlabelsize = 20,
     ylabelsize = 20,
     title = "Asymtote",
     titlesize = 24)
 
 stem!(ax, ns, sumd.(ns); label=L"$\sum_{n \leq x}d(n)$")
-lines!(ax, ns, xlog.(ns); color=:red, label=L"$x \log x$")
+lines!(ax, ns, xlog.(ns); color=:red, label=L"$x \log x + (2 \gamma - 1) x$")
 
 axislegend(ax;
     position = :lt,
@@ -148,7 +149,7 @@ Now consider the constant function $\mathbf{1}(n) = 1$, we immediately check tha
 
 ## Perron's Formula
 
-If the Dirichlet series $L(s, a) = \sum_{n > 0} a(n)n^{-s}$ converges absolutely at some $s \in \C$, then convergence is guaranteed at every point to the right of $s$. If we define 
+If the Dirichlet series $L(s, a) = \sum_{n > 0} a(n)n^{-s}$ converges absolutely at some $s \in \C$, then convergence is guaranteed at every point to the right of $s$. If we define
 $$
     \sigma_a \coloneqq \inf \{\Re s \mid \text{$\sum_{n > 0} a(n) n^{-s}$ converges absolutely}\}
 $$
@@ -168,7 +169,7 @@ Apply the [inverse Laplace transform](https://en.wikipedia.org/wiki/Inverse_Lapl
 $$
     \frac{A(x^-) + A(x^+)}{2} = \frac{1}{2\pi \ii}\int_{c - i \infty}^{c + i\infty} L(s, a) \frac{x^s}{s} \dd s.
 $$
-where $c$ is any real number larger than $\_sigma_a$. The left-hand side is often written as $\sum'_{n \leq x} a(n)$, the only difference from the usual $\sum$ is that when $x$ is an integer, the last term $a(x)$ is replaced by $a(x)/2$. The above equality is called **Perron's formula**.
+where $c$ is any real number larger than $\sigma_a$. The left-hand side is often written as $\sum'_{n \leq x} a(n)$, the only difference from the usual $\sum$ is that when $x$ is an integer, the last term $a(x)$ is replaced by $a(x)/2$. The above equality is called **Perron's formula**.
 
 ## Contour Shifting
 
@@ -200,11 +201,10 @@ which gives a different expression
 $$
 \zeta(s) = \frac{\tilde D(s)}{1 - 3^{1-s}}.
 $$
-Now the possible poles are of the form $s = 1 + \frac{2\pi \ii}{\log 3}m, m \in \Z$. Now that $\gcd(2, 3) = 1$, the quotient $\frac{\log 3}{\log 2} = \log_2 3$ cannot be a rational number, so $s = 1$ is the only pole. We may plot the $\zeta$ function as follows, the color reflects argument, and brightness reflects absolute value. As we can see, the brightest point is the pole.
+Now the possible poles are of the form $s = 1 + \frac{2\pi \ii}{\log 3}m, m \in \Z$. Notice that $\gcd(2, 3) = 1$, the quotient $\frac{\log 3}{\log 2} = \log_2 3$ cannot be a rational number, so $s = 1$ is the only pole. We may plot the $\zeta$ function as follows, the color reflects argument, and brightness reflects absolute value. As we can see, the brightest point is the pole.
 
-```julia:./code/
+```julia:./code/zeta_domain_coloring
 #hideall
-zeta_domain_coloring
 using CairoMakie, SpecialFunctions, Colors
 
 # the domain
@@ -246,8 +246,8 @@ save(joinpath(@OUTPUT, "zeta_domain_coloring.png"), fig)
 Consider the following contour, which we will shift.
 
 ```julia:./code/shift
+#hideall
 using CairoMakie
-
 fig = Figure()
 ax = Axis(fig[1, 1],
     title = "Contour Shifting",
@@ -260,7 +260,6 @@ save(joinpath(@OUTPUT, "shift.svg"), fig)
 ```
 
 \fig{shift}
-
 
 ## References
 
