@@ -2,5 +2,6 @@
 
 # Computer Science Essays
 
-## [Functional Programming](/cs/functional-programming/)
-1. [Algebraic Data Types](./functional-programming/algebraic-data-types)
++ [Programming Language Archive](/cs/languages): The languages that I like and use.
+
+## [Haskell](/cs/haskell/)
